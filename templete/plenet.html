@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SW API Planets</title>
+</head>
+<body>
+<form method="get">
+    <table border=5>
+        <tr>
+            <th><h3>Name</h3></th>
+            <th><h3>Rotation Period</h3></th>
+            <th><h3>Orbital Period</h3></th>
+            <th><h3>Diameter </h3></th>
+            <th><h3>Climate </h3></th>
+            <th><h3>Gravity </h3></th>
+            <th><h3>Terrain </h3></th>
+            <th><h3>Surface Water </h3></th>
+            <th><h3>Population </h3></th>
+            <th><h3>Residents</h3></th>
+            <th><h3>Films</h3></th>
+            <th><h3>Created</h3></th>
+            <th><h3>Edited</h3></th>
+
+        </tr>
+        <tr>
+            <td><h4>{{data.name}}</h4></td>
+            <td><h5>{{data.rotation_period}}</h5></td>
+            <td><h5>{{data.orbital_period}}</h5></td>
+            <td><h5>{{data.diameter}}</h5></td>
+            <td><h5>{{data.climate}}</h5></td>
+            <td><h5>{{data.gravity}}</h5></td>
+            <td><h5>{{data.terrain}}</h5></td>
+            <td><h5>{{data.surface_water}}</h5></td>
+            <td><h5>{{data.population}}</h5></td>
+            <td>
+                {% for rs in data.residents %}
+                <a  style="text-decoration:none;" href="/people?path={{rs}}" target=" "><h3>Person</h3></a><br>
+                {% endfor %}
+            </td>
+            <td>
+                {% for film in data.films %}
+                <a  style="text-decoration:none;" href="/films?path={{film}}" target=" "><h3>Film</h3></a>
+                {% endfor %}
+            </td>
+                <h3>{{data.created}}</h3>
+            </td>
+            <td>
+                <h3>{{data.edited}}</h3>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

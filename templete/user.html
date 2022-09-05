@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user auth</title>
+</head>
+<body>
+<!--user auth-->
+{% for key,value in session %}
+<!--{{key}}-->
+<!--{{value}}-->
+{% endfor %}
+
+<form action=""method="get">
+    <lable>Email:</lable><input type="email" name="email" value="{{email}}"><br><br>
+    <lable>pass:</lable><input type="password" name="password" value=""><br><br>
+    <input type="submit" name="" value="submit"><br><br><br>
+
+</form>
+</body>
+</html>

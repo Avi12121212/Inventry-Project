@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SW API</title>
+</head>
+<body>
+<form method="get">
+    <table border=5>
+        <tr>
+            <th><h3>Name</h3></th>
+            <th><h3>Model</h3></th>
+            <th><h3>Manufacturer</h3></th>
+            <th><h3>Cost in Credit</h3></th>
+            <th><h3>Length</h3></th>
+            <th><h3>Max Atmosphere Speed</h3></th>
+            <th><h3>Crew</h3></th>
+            <th><h3>Passengers</h3></th>
+            <th><h3>Cargo Capacity</h3></th>
+            <th><h3>Consumable</h3></th>
+            <th><h3>Vehicle Class</h3></th>
+            <th><h3>Pilots</h3></th>
+            <th><h3>Films</h3></th>
+            <th><h3>CREATED</h3></th>
+            <th><h3>Edited</h3></th>
+
+        </tr>
+        <tr>
+            <td><h4>{{data.name}}</h4></td>
+            <td><h5>{{data.model}}</h5></td>
+            <td><h5>{{data.manufacturer}}</h5></td>
+            <td><h5>{{data.cost_in_credits}}</h5></td>
+            <td><h5>{{data.length}}</h5></td>
+            <td><h5>{{data.max_atmosphering_speed}}</h5></td>
+            <td><h5>{{data.crew}}</h5></td>
+            <td><h5>{{data.passengers}}</h5></td>
+            <td><h5>{{data.cargo_capacity}}</h5></td>
+            <td><h5>{{data.consumables}}</h5></td>
+            <td><h5>{{data.vehicle_class}}</h5></td>
+            <td>
+                {% for pilot in data.pilots %}
+                <a  style="text-decoration:none;" href="/vehicles?path={{pilot}}" target=" "><h3>Pilot</h3></a><br>
+                {% endfor %}
+            </td>
+
+            <td>
+                {% for film in data.films %}
+                <a  style="text-decoration:none;" href="/films?path={{film}}" target=" "><h3>Film</h3></a>
+                {% endfor %}
+            </td>
+            <td>
+                <h3>{{data.created}}</h3>
+            </td>
+            <td>
+                <h3>{{data.edited}}</h3>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

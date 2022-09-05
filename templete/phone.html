@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>phone</title>
+</head>
+<body>
+{% for key,value in session %}
+{{key}}
+{{value}}
+{% endfor %}<br><br>
+<form action="" method="get">
+    <input type="text" name="phone" value="{{phone}}"><br>
+    <input type="submit" name="" value="submit">
+
+</form>
+<center><button>logout</button></center>
+<br>
+<br>
+<table border="5">
+    <tr>
+        <th>Phone</th>
+        <th>Color</th>
+        <th>Price</th>
+        <th>Model</th>
+        <th>Feature</th>
+        <th>Camera</th>
+    </tr>
+    {% for da in data %}
+    <tr>
+        <td>{{da.phone}}</td>
+        <td>{{da.color}}</td>
+        <td>{{da.price}}</td>
+        <td>{{da.model}}</td>
+        <td>{{da.feature}}</td>
+        <td>{{da.camera}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
