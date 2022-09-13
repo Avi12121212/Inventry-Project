@@ -10,7 +10,6 @@ from .models import We
 # Create your views here.
 otp = ""
 
-
 # otp = ""
 # for i in range(4):
 #     otp += str(random.randint(0, 10))
@@ -83,8 +82,6 @@ def otp(request):
     for i in range(4):
         otp += str(random.randint(0, 10))
     return HttpResponse(otp)
-
-
 
 def otpfill(request):
     if request.GET:
